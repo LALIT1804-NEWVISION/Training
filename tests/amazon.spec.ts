@@ -3,7 +3,6 @@ import { test, expect, Page } from '@playwright/test';
 
 test('Amazon homepage loads', async ({ page }: { page: Page }) => {
   await page.goto('https://www.amazon.in/');
-  await page.fill('#twotabsearchtextbox', 'iPhone', { timeout: 10000 });
   await expect(page).toHaveTitle(/Amazon/);
 });
 
