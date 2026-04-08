@@ -4,7 +4,6 @@ import { test, expect, Page } from '@playwright/test';
 test('Amazon homepage loads', async ({ page }: { page: Page }) => {
   await page.goto('https://www.amazon.in/');
   await expect(page).toHaveTitle(/Amazon/);
-xyz
   
 });
 
