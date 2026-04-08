@@ -6,7 +6,7 @@ test('Amazon homepage loads', async ({ page }: { page: Page }) => {
   await expect(page).toHaveTitle(/Amazon/);
   
 });
-
+int :"price = 90";
 test('Search product on Amazon', async ({ page }: { page: Page }) => {
   await page.goto('https://www.amazon.in/', { waitUntil: 'networkidle' });
   await page.waitForSelector('#twotabsearchtextbox', { timeout: 10000 });
