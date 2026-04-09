@@ -14,14 +14,16 @@ test('TC01 - Valid user should login successfully',async ({loginAction,page})=>{
     await expect(page).toHaveURL(/inventory/);
 });
 
-test('TC02 - Locked out user should not login',async ({loginAction,page})=>{
+test('TC02 - Locked out user should not login',async ({loginAction})=>{
+    //test('TC02 - Locked out user should not login',async ({loginAction,page})=>{
     //const loginAction = new LoginAction(page);
     await loginAction.login(loginData.lockedUser.username ,loginData.lockedUser.password);
     const errormsg = await loginAction.getErrorMessage();
     await expect(errormsg).toHaveText(loginData.lockedUser.errorMessage);
 });
 
-test('TC03 - problem user should not login',async ({loginAction,page})=>{
+test('TC03 - problem user should not login',async ({loginAction})=>{
+   // test('TC03 - problem user should not login',async ({loginAction,page})=>{
     //const loginAction = new LoginAction(page);
     await loginAction.login(loginData.invalidUser.username ,loginData.invalidUser.password);
      const errormsg = await loginAction.getErrorMessage();
